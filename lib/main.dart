@@ -1,5 +1,5 @@
 import 'package:bmtask/model/watchlist_model.dart';
-import 'package:bmtask/view/bottomnav.dart';
+import 'package:bmtask/view/bottom_nav/bottomnav.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

@@ -1,5 +1,5 @@
-import 'package:bmtask/view/homepage.dart';
-import 'package:bmtask/view/wishlist.dart';
+import 'package:bmtask/view/homescreen/homepage.dart';
+import 'package:bmtask/view/whislist/wishlist.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavScreen extends StatefulWidget {
