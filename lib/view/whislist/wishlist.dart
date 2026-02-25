@@ -1,5 +1,8 @@
+import 'package:bmtask/constant.dart';
 import 'package:bmtask/model/watchlist_model.dart';
 import 'package:bmtask/services/watchlist_service.dart';
+import 'package:bmtask/view/homescreen/widget/appbar.dart';
+import 'package:bmtask/view/whislist/widget/wishlist_header.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -14,7 +17,7 @@ class _WishlistState extends State<Wishlist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Wishlist'), centerTitle: true),
+      appBar:buildAppbar("wishlist"),
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -23,33 +26,10 @@ class _WishlistState extends State<Wishlist> {
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
               decoration: BoxDecoration(
-                color: Colors.blueGrey.shade100,
+                color: AppColor.blueGrey,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Name',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      'Score',
-                      textAlign: TextAlign.end,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 70),
-                ],
-              ),
+              child:const WatchlistHeader(),
             ),
 
             const SizedBox(height: 10),
@@ -103,7 +83,7 @@ class _WishlistState extends State<Wishlist> {
                               IconButton(
                                 icon: const Icon(
                                   Icons.delete,
-                                  color: Colors.grey,
+                                  color: AppColor.grey,
                                 ),
                                 onPressed: () async {
                                   final shouldDelete = await showDialog<bool>(
