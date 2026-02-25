@@ -125,6 +125,7 @@ No authentication system
 👨‍💻 Author
 
 Abhinav S
+
 Flutter Developer
 
 A few resources to get you started if this is your first Flutter project:
